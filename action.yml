@@ -11,5 +11,10 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - run: python main.py
+    - name: Checkout Action Repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.action_repository }}  # Ensures we pull the action repo
+    - name: Run Python Script
+      run: python main.py
       shell: bash
