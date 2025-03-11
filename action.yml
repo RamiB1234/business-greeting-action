@@ -11,11 +11,5 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Checkout Action Repository
-      uses: actions/checkout@v4
-      with:
-        path: action_repo  # Clones into a subdirectory
-
-    - name: Run Python Script
-      run: python action_repo/main.py
+    - run: python main.py
       shell: bash
